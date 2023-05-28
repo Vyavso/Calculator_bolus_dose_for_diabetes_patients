@@ -42,3 +42,27 @@ blood_sugar_correction = round(blood_sugar_correction, 2)
 print("Insulin dose for carbohydrate coverage: {} units".format(insulin_dose))
 print("High blood sugar correction: {} units".format(blood_sugar_correction))
 
+# Receive user input for carbohydrate coverage dose and high blood sugar correction dose
+carb_dose = float(input("Enter carbohydrate coverage dose (in units):"))
+correction_dose = float(input("Enter the high blood sugar correction dose (in units):"))
+
+# Get user input for weight in pounds or kilograms
+weight_unit = input("Enter weight unit (pounds or kilograms): ")
+weight = float(input("Enter weight: "))
+
+# Calculate total daily insulin dose
+if weight_unit.lower() == "pounds":
+    total_daily_dose = weight / 4
+else:
+    total_daily_dose = 0.55 * weight
+
+# Calculate basal/background insulin dose
+basal_dose = 0.5 * total_daily_dose
+
+# Calculate carbohydrate coverage ratio
+carb_coverage_ratio = 500 / total_daily_dose
+
+# Print the results
+print("Total daily insulin dose:", total_daily_dose, "units")
+print("Basal/background insulin dose:", basal_dose, "units")
+print("Carbohydrate coverage ratio:", carb_coverage_ratio, "grams of carbohydrate per unit of insulin")
