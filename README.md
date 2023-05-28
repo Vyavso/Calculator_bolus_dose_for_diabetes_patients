@@ -41,3 +41,4 @@ blood_sugar_correction = round(blood_sugar_correction, 2)
 # Print the results
 print("Insulin dose for carbohydrate coverage: {} units".format(insulin_dose))
 print("High blood sugar correction: {} units".format(blood_sugar_correction))
+
